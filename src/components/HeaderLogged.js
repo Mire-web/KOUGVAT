@@ -16,7 +16,7 @@ import { addYears } from "date-fns";
 import ProgressBar from "@badrap/bar-of-progress";
 import GuestMenu from "./GuestMenu";
 
-function Header({ placeholder }) {
+function HeaderLogged({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const date = new Date();
@@ -154,4 +154,4 @@ function Header({ placeholder }) {
   );
 }
 
-export default Header;
+export default HeaderLogged;
