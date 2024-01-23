@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import InfoCard from "./InfoCard";
+import InfoCard from "@components/InfoCard";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { useSearchParams } from "next/navigation";
