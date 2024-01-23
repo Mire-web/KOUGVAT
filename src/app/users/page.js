@@ -31,7 +31,7 @@ function page() {
                 I need a roommate
               </span>
             </label>
-            <button className="mt-100 bg-red-500 rounded-full h-10 p-2 w-50">
+            <button className="mt-100 bg-red-500 rounded-full h-10 p-2 w-50 text-white font-bold">
               Log Out
             </button>
           </div>
