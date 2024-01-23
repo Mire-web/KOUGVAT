@@ -39,13 +39,13 @@ function page() {
         <div className="col-span-2 flex flex-col pl-5">
           {/* h1 intro */}
           <div className="mt-10 mb-10">
-            <h1 className="text-4xl">Hey, Gena Here</h1>
+            <h1 className="text-2xl md:text-4xl">Hey, Gena Here</h1>
             <p className="text-sm text-sky-400 hover:text-sky-600 font-semibold">
               ▪Edit profile
             </p>
           </div>
           {/* bio */}
-          <p className="text-xl text-gray-500 mb-10">
+          <p className="text-md md:text-xl text-gray-500 mb-10">
             C.E.O of Gena Concepts Media, a designer, photographer and photo
             editor by day, and an adventurer by night.
           </p>
