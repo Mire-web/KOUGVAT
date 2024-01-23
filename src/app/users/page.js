@@ -8,10 +8,10 @@ function page() {
   return (
     <>
       <HeaderLogged />
-      <div className="relative grid grid-cols-3">
+      <div className="relative grid grid-cols-1 md:grid-cols-3">
         <div className="relative flex flex-col min-h-[100vh] border-r shadow-lg cursor-pointer">
           {/* {Profile pics} */}
-          <div className="relative h-80 w-80 mb-5 mx-auto mt-5 flex items-center">
+          <div className="relative h-50 w-50 md:h-80 md:w-80 mb-5 mx-auto mt-5 flex items-center">
             <Image
               src={"https://i.imgur.com/P7zWtd7.jpeg"}
               alt="profile-img"
