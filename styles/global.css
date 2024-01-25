@@ -4,4 +4,10 @@
 	.button{
 		@apply px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out;
 	}
+	.navLink{
+		@apply text-sm font-semibold hover:bg-gray-200 transition duration-100 ease-out py-3 px-2 rounded-sm;
+	}
+	.adminNavbtn{
+		@apply mb-3 active:bg-sky-400 p-2 rounded-full h-10 hover:bg-sky-700 transition duration-200 ease-out active:scale-95 transform hover:shadow-lg;
+	}
 }

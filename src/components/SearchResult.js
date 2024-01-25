@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import InfoCard from "@components/InfoCard";
+import InfoCard from "./InfoCard";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { useSearchParams } from "next/navigation";
@@ -8,8 +8,6 @@ import format from "date-fns/format";
 
 export function SearchResult(searchResult) {
   const searchParams = useSearchParams();
-  console.log(typeof searchResult);
-  console.log(searchResult);
   const location = searchParams.get("location");
   const startDate = format(
     new Date(searchParams.get("startDate")),

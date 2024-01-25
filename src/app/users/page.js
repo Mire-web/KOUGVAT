@@ -2,12 +2,14 @@ import Image from "next/image";
 import React from "react";
 import { HomeIcon, BriefcaseIcon } from "@heroicons/react/solid";
 import { ClockIcon } from "@heroicons/react/outline";
-import HeaderLogged from "@/components/Header";
+import { FaWhatsapp } from "react-icons/fa";
+import Header from "@/components/Header";
+import Link from "next/link";
 
 function page() {
   return (
     <>
-      <HeaderLogged />
+      <Header />
       <div className="relative grid grid-cols-1 md:grid-cols-3">
         <div className="relative flex flex-col min-h-[100vh] border-r shadow-lg cursor-pointer">
           {/* {Profile pics} */}
@@ -23,15 +25,22 @@ function page() {
             </h5>
           </div>
           <div className="border-b"></div>
-          <div className="relative h-[200px] justify-between mx-auto mt-10 flex flex-col">
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" value="" className="sr-only peer" />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-sky-400 outline-none"></div>
-              <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-500">
-                I need a roommate
-              </span>
-            </label>
-            <button className="mt-100 bg-red-500 rounded-full h-10 p-2 w-50 text-white font-bold">
+          <div className="relative h-[200px] justify-between mt-10 flex flex-col w-[100%] items-center px-3">
+            <div className="justify-between w-[100%] flex">
+              <div>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" className="sr-only peer" />
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-sky-400 outline-none"></div>
+                  <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-500">
+                    I need a roommate
+                  </span>
+                </label>
+              </div>
+              <Link href={"https://wa.me/2348081175695"}>
+                <FaWhatsapp className="text-2xl text-green-500 font-bold" />
+              </Link>
+            </div>
+            <button className="mt-100 bg-red-500 rounded-full h-10 p-2 w-[200px] text-white font-bold">
               Log Out
             </button>
           </div>

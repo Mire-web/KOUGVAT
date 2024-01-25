@@ -15,6 +15,8 @@ import { useCallback } from "react";
 import { addYears } from "date-fns";
 import ProgressBar from "@badrap/bar-of-progress";
 import GuestMenu from "./GuestMenu";
+import { Logged } from "./Logged";
+import UserMenu from "./UserMenu";
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
@@ -81,6 +83,7 @@ function Header({ placeholder }) {
   const handleHomeClick = () => {
     router.push("/");
     progressBarRun(1000);
+	console.log(Logged(true))
   };
 
   const [open, setOpen] =useState(false);
@@ -149,7 +152,7 @@ function Header({ placeholder }) {
             </div>
           </div>
         )}
-      {open && <GuestMenu />}
+      {open && <Logged logged = {false}/>}
       </header>
   );
 }
