@@ -20,15 +20,15 @@ export function SearchResult(searchResult) {
   return (
     <div>
       <Header
-        placeholder={`${location} | ${range} | ${noOfGuests} ${formattedWord}`}
+        placeholder={`${location || 'any'} | ${range || 'any'} | ${noOfGuests || 'any'} ${formattedWord}`}
       />
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
-            Lodges - {range} - for {noOfGuests} {formattedWord}
+            Lodges - {range}
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
-            Availiable in {location}
+            Availiable in {location || 'Any location'}
           </h1>
           <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
             <p className="button">Water</p>

@@ -7,7 +7,7 @@ function NavBar({ status }) {
   return (
     <div className={`${!status && 'hidden'} md:block z-100`}>
       <div className="bg-sky-900 min-h-[100vh] flex flex-col justify-between p-6 relative">
-	  <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-center text-white">Admin</h1>
+	  <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-center text-white cursor-pointer" onClick={()=> router.push("/admin")}>Admin</h1>
         <div className="text-white cursor-pointer flex-col flex">
           {/* Posts */}
           <button className="adminNavbtn" onClick={()=> router.push("/admin/addListing")}>Add New Listing</button>

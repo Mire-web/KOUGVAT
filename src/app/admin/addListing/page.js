@@ -4,7 +4,7 @@ function AddListing() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 relative">
       <AdminMenu />
-	  <div></div>
+      <div></div>
       <div className="lg:col-span-3 md:col-span-2 md:col-start-2">
         <section class="bg-white dark:bg-gray-900">
           <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
@@ -58,7 +58,7 @@ function AddListing() {
                     id="price"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="100000"
-					min={10000}
+                    min={10000}
                     required
                   />
                 </div>
@@ -80,9 +80,8 @@ function AddListing() {
                     <option value="twin storey">Twin Storey</option>
                   </select>
                 </div>
-				<div>
-					
-				<label
+                <div>
+                  <label
                     for="room-type"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
@@ -94,13 +93,15 @@ function AddListing() {
                   >
                     <option selected="">Select Room Type</option>
                     <option value="single-room">Single Room</option>
-                    <option value="studio-apartment">Studio Apartment(self contain)</option>
+                    <option value="studio-apartment">
+                      Studio Apartment(self contain)
+                    </option>
                     <option value="shared-apartment">Shared Apartment</option>
                     <option value="rfh">Room in a Family house</option>
                   </select>
-				</div>
-				<div>
-				<label
+                </div>
+                <div>
+                  <label
                     for="amenities"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
@@ -118,7 +119,7 @@ function AddListing() {
                     <option value="GTW">General tap water</option>
                     <option value="AA">All of the Above</option>
                   </select>
-				</div>
+                </div>
                 <div>
                   <label
                     for="max-roommate"
@@ -132,8 +133,28 @@ function AddListing() {
                     id="max-roommate"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="3"
-					min={1}
+                    min={1}
                   />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-start">
+                    <div className="flex items-center h-5">
+                      <input
+                        id="vip"
+                        aria-describedby="vip-indicator"
+                        type="checkbox"
+                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                      />
+                    </div>
+                    <div className="ml-3 text-sm">
+                      <label
+                        for="vip"
+                        className="text-gray-700 dark:text-gray-500"
+                      >
+                        VIP LODGE
+                      </label>
+                    </div>
+                  </div>
                 </div>
                 <div class="sm:col-span-2">
                   <label

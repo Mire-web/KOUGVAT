@@ -10,13 +10,14 @@ import { useState } from "react";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import { addYears } from "date-fns";
-import ProgressBar from "@badrap/bar-of-progress";
+import { progressBarRun } from "./progressBar";
 import GuestMenu from "./GuestMenu";
 import { Logged } from "./Logged";
 import UserMenu from "./UserMenu";
+import { searchCompose } from "./searchComposer";
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
@@ -38,7 +39,6 @@ function Header({ placeholder }) {
     setSearchInput("");
   };
   const router = useRouter();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const createQueryString = useCallback(
     (obj) => {
@@ -51,34 +51,19 @@ function Header({ placeholder }) {
     [searchParams]
   );
 
-  const progress = new ProgressBar({
-    size: 4,
-    color: "rgb(56,189,248)",
-    className: "z-50",
-    delay: 100,
-  });
-
-  const search = () => {
-    router.push(
-      "/search" +
-        "?" +
+  const search =()=>{
+	searchCompose({
+		queryString:
         createQueryString({
           location: searchInput,
           startDate: startDate.toISOString(),
           endDate: endDate.toISOString(),
           noOfGuests: noOfGuests,
-        })
-    );
-    progressBarRun(2000);
-    resetInput();
-  };
-
-  const progressBarRun = (timer) => {
-    progress.start();
-    setTimeout(() => {
-      progress.finish();
-    }, timer);
-  };
+        }),
+		router: router
+  })
+  resetInput();
+  }
 
   const handleHomeClick = () => {
     router.push("/");
