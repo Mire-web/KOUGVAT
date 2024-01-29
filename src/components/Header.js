@@ -18,6 +18,7 @@ import GuestMenu from "./GuestMenu";
 import { Logged } from "./Logged";
 import UserMenu from "./UserMenu";
 import { searchCompose } from "./searchComposer";
+import Link from "next/link";
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
@@ -79,7 +80,7 @@ function Header({ placeholder }) {
         <div
           onClick={handleHomeClick}
           className={
-            "relative cursor-pointer text-3xl text-sky-900 flex items-center h-10"
+            "relative cursor-pointer text-2xl md:text-3xl text-sky-900 flex items-center h-10"
           }
         >
           <h1>KOUGVAT</h1>
@@ -97,7 +98,7 @@ function Header({ placeholder }) {
         </div>
         {/* {right} */}
         <div className="flex space-x-4 items-center justify-end text-gray-500">
-          <p className="hidden md:inline cursor-pointer">Become an Agent</p>
+          <Link className="hidden md:inline cursor-pointer" href={'https://wa.me/2349027997382?text=I%20am%20interested%20in%20being%20an%20agent%20for%20KOUGVAT.'} target="blank">Become an Agent</Link>
           <GlobeAltIcon className="h-6" />
           <div className="flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer"
 		  onClick={()=> setOpen(!open)}>
