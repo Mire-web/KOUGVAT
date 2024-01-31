@@ -34,6 +34,7 @@ function SmallCard({ img, location, distance }) {
 			noOfGuests: noOfGuests
           }),
           router: router,
+		path: "/search"
         });
       }}
     >
