@@ -61,7 +61,8 @@ function Header({ placeholder }) {
           endDate: endDate.toISOString(),
           noOfGuests: noOfGuests,
         }),
-		router: router
+		router: router,
+		path: '/search'
   })
   resetInput();
   }

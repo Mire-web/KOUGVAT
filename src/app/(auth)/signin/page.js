@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import  {signIn} from "next-auth/react"
+import User from "@/models/userModel";
+import { connectDB } from "@/utils/connect";
 
 function SignIn() {
 	const [password, setPassword] = useState("");
@@ -18,6 +20,21 @@ function SignIn() {
 	  setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	  setError("");
 	};
+
+	async function login(){
+		try {
+			connectDB();
+			console.log(User)
+			const user = await User.findOne({email:userInfo.email});
+			if(!user) throw new Error("Wrong Credentials.");
+			const isCorrect = await bcrypt.compare(userInfo.password, user.password);
+			if (!isCorrect) throw new Error("Wrong Credentials");
+			return user;
+		}catch (error){
+			setError(error);
+		}
+	}
+
 	async function handleSubmit(e) {
 	  e.preventDefault();
 	  if (!userInfo.email || !userInfo.password) {
@@ -25,16 +42,12 @@ function SignIn() {
 	  } else {
 		try {
 		  setPending(true);
-		  console.log(userInfo)
-		  signIn("credentials",{
-			  email: userInfo.email,
-			  password: userInfo.password,
-			  redirect: false
-		  })
+		  const user = login()
+		  console.log(user);
 		} catch (error) {
 		  setPending(false);
 		  console.log(error);
-		  setError("something went wrong, Try again.");
+		  setError(error);
 		}
 	  }
 	}

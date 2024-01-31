@@ -1,8 +1,8 @@
 import { progressBarRun } from "./progressBar";
 
 export function searchCompose({
-  queryString, router
+  queryString, router, path
 }) {
-  router.push("/search" + "?" + queryString);
+  router.push(path + "?" + queryString);
   progressBarRun(({timer: 2000}));
 }

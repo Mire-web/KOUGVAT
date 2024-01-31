@@ -10,6 +10,10 @@ function Banner() {
 		progressBarRun({timer:3000});
 		router.push('/explore')
 	}
+	const exploreRoommate = () => {
+		progressBarRun({timer:3000});
+		router.push('/explore/roommates')
+	}
   return (
     <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
       <Image
@@ -19,9 +23,14 @@ function Banner() {
       />
       <div className="absolute top-1/2 w-full text-center">
         <p className="text-sm sm:text-lg">New to KOUGVAT? Perfect.</p>
-        <button className="text-sky-900 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={explore}>
-          Explore
+		<div>
+        <button className="text-sky-900 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 mr-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={explore}>
+          Explore Lodges
         </button>
+        <button className="text-sky-900 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={exploreRoommate}>
+          Explore Roommates
+        </button>
+		</div>
       </div>
     </div>
   );

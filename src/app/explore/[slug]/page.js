@@ -1,9 +1,6 @@
-import Header from '@/components/Header'
 import ItemDetailCard from '@/components/ItemDetailCard'
-import Link from 'next/link'
 
-function ListingDetail({params}) {
-	const id = params.slug
+function ListingDetail() {
   return (
 	<div>
 		<ItemDetailCard />

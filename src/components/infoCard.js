@@ -2,17 +2,45 @@
 import { StarIcon } from '@heroicons/react/solid';
 import { HeartIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
 import { progressBarRun } from './progressBar';
+import { searchCompose } from './searchComposer';
 
 function InfoCard({img, title, description, star, price, location}) {
 	const router = useRouter();
+	const searchParams = useSearchParams();
+	const createQueryString = useCallback(
+	  (obj) => {
+		const params = new URLSearchParams(searchParams);
+		Object.keys(obj).forEach((key) => {
+		  params.set(key, obj[key]);
+		});
+		return params.toString();
+	  },
+	  [searchParams]
+	);
+	
+	const showDetail =()=>{
+	  searchCompose({
+		  queryString:
+		  createQueryString({
+			location: location,
+			img: img,
+			title: title,
+			star: star,
+			price: price,
+			desc: description
+		  }),
+		  router: router,
+		  path: `/explore/${location}`
+	})
+	progressBarRun({timer:2000})
+  }
+
   return (
 	<div className='flex py-7 px-2 pr-2 border-b cursor-pointer flex-col md:flex-row first:border-t hover:opacity-80 hover:shadow-lg transition duration-200 ease-out' 
-	onClick={()=>{
-		progressBarRun({timer:2000})
-		router.push(`/explore/${title}`)
-		}}>
+	onClick={showDetail}>
 		<div className='relative h-24 w-40 md:h-52 md:w-80 self-center flex-shrink-0'>
 			<Image src={img} layout='fill' objectFit='cover' className='rounded-2xl'/>
 		</div>
