@@ -33,9 +33,10 @@ function InfoCard({img, title, description, star, price, location}) {
 			desc: description
 		  }),
 		  router: router,
-		  path: `/explore/${location}`
+		  path: `/explore/${title}`
 	})
 	progressBarRun({timer:2000})
+	console.log("");
   }
 
   return (

@@ -28,7 +28,7 @@ export default function ItemDetailCard() {
 	  <ArrowLeftIcon className="h-5 pr-2" />
 	  Back to explore
 	</p>
-      <div className="relative h-80 mx-auto w-80 md:h-[100%] md:w-[100%] md:row-start-1 md:row-span-2">
+      <div className="relative h-80 mx-auto w-[100%] px-3 md:h-[100%] md:w-[100%] md:row-start-1 md:row-span-2">
         <Image
           src={img}
           layout="fill"
@@ -59,7 +59,7 @@ export default function ItemDetailCard() {
 		</div>
 		<div className="bg-white shadow-md p-3 flex justify-between items-center mt-9">
 			<p className="text-xl md:text-2xl font-bold">{price}</p>
-			<Link href={'https://wa.me/2349027997382?text=I%20am%20interested%20in%20lodge%20from%20KOUGVAT.'} target="blank" className="font-medium text-white hover:scale-95 shadow-md transform transition duration-150 rounded-md p-2 text-sm md:text-md md:p-3 bg-primary-600">Book this room</Link>
+			<Link href={`https://wa.me/2349027997382?text=I%20am%20interested%20in%20${title}%20lodge%20from%20KOUGVAT.`} target="blank" className="font-medium text-white hover:scale-95 shadow-md transform transition duration-150 rounded-md p-2 text-sm md:text-md md:p-3 bg-primary-600">Book this room</Link>
 		</div>
       </div>
     </div>

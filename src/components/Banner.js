@@ -23,11 +23,11 @@ function Banner() {
       />
       <div className="absolute top-1/2 w-full text-center">
         <p className="text-sm sm:text-lg">New to KOUGVAT? Perfect.</p>
-		<div>
-        <button className="text-sky-900 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 mr-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={explore}>
+		<div className="flex items-center sm:flex-row flex-col mx-auto w-fit">
+        <button className="text-sky-900 bg-white sm:px-10 px-8 py-2 sm:py-4 shadow-md rounded-full font-bold my-3 mr-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={explore}>
           Explore Lodges
         </button>
-        <button className="text-sky-900 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={exploreRoommate}>
+        <button className="text-sky-900 bg-white sm:px-10 px-8 py-2 sm:py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150" onClick={exploreRoommate}>
           Explore Roommates
         </button>
 		</div>
