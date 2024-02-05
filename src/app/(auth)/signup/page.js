@@ -78,7 +78,7 @@ function SignUp() {
             >
               <div>
                 <label
-                  for="name"
+                  htmlFor="name"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   FullName
@@ -95,7 +95,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Email
@@ -112,7 +112,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="reg-no"
+                  htmlFor="reg-no"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Reg no
@@ -128,7 +128,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password
@@ -148,7 +148,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="cpassword"
+                  htmlFor="cpassword"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Confirm Password

@@ -15,7 +15,7 @@ function AddListing() {
               <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div class="sm:col-span-2">
                   <label
-                    for="name"
+                    htmlFor="name"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Lodge Name
@@ -31,7 +31,7 @@ function AddListing() {
                 </div>
                 <div className="w-full">
                   <label
-                    for="brand"
+                    htmlFor="brand"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Location
@@ -47,7 +47,7 @@ function AddListing() {
                 </div>
                 <div className="w-full">
                   <label
-                    for="price"
+                    htmlFor="price"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Price
@@ -64,7 +64,7 @@ function AddListing() {
                 </div>
                 <div>
                   <label
-                    for="category"
+                    htmlFor="category"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Category
@@ -82,7 +82,7 @@ function AddListing() {
                 </div>
                 <div>
                   <label
-                    for="room-type"
+                    htmlFor="room-type"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Room Type
@@ -102,7 +102,7 @@ function AddListing() {
                 </div>
                 <div>
                   <label
-                    for="amenities"
+                    htmlFor="amenities"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Amenities
@@ -122,7 +122,7 @@ function AddListing() {
                 </div>
                 <div>
                   <label
-                    for="max-roommate"
+                    htmlFor="max-roommate"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Maximum roommate
@@ -148,7 +148,7 @@ function AddListing() {
                     </div>
                     <div className="ml-3 text-sm">
                       <label
-                        for="vip"
+                        htmlFor="vip"
                         className="text-gray-700 dark:text-gray-500"
                       >
                         VIP LODGE
@@ -158,7 +158,7 @@ function AddListing() {
                 </div>
                 <div class="sm:col-span-2">
                   <label
-                    for="description"
+                    htmlFor="description"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Description

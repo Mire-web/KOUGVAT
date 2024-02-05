@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import { useSearchParams } from "next/navigation";
 import format from "date-fns/format";
 
-export function SearchResult(searchResult) {
+export function SearchResult(searchResult, isAuth) {
   const searchParams = useSearchParams();
   const location = searchParams.get("location");
   const startDate = format(
@@ -20,15 +20,16 @@ export function SearchResult(searchResult) {
   return (
     <div>
       <Header
-        placeholder={`${location || 'any'} | ${range || 'any'} | ${noOfGuests || 'any'} ${formattedWord}`}
+        isLoggedIn={isAuth}
+        placeholder={`${location || "any"} | ${range || "any"} | ${
+          noOfGuests || "any"
+        } ${formattedWord}`}
       />
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
-          <p className="text-xs">
-            Lodges - {range}
-          </p>
+          <p className="text-xs">Lodges - {range}</p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
-            Availiable in {location || 'Any location'}
+            Availiable in {location || "Any location"}
           </h1>
           <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
             <p className="button">Water</p>
@@ -47,7 +48,7 @@ export function SearchResult(searchResult) {
               star={item.star}
               price={item.price}
             />
-		  ))}
+          ))}
         </section>
       </main>
       <Footer />

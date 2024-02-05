@@ -5,11 +5,29 @@ import { ClockIcon } from "@heroicons/react/outline";
 import { FaWhatsapp } from "react-icons/fa";
 import Header from "@/components/Header";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
 
-function page() {
+async function getAndValidateCookiesFromApplication() {
+  const cookieStore = cookies();
+  const token = cookieStore.get("token")?.value;
+  // console.log("token", token)
+  if (!token) return false;
+  try {
+    const decoded = jwt.verify(token, process.env.NEXTAUTH_SECRET_KEY);
+    return true;
+  } catch (err) {
+    console.log("err", err);
+    return false;
+  }
+}
+
+async function page() {
+  const isAuth = await getAndValidateCookiesFromApplication();
+
   return (
     <>
-      <Header />
+      <Header isLoggedIn={isAuth}/>
       <div className="relative grid grid-cols-1 md:grid-cols-3">
         <div className="relative flex flex-col min-h-[100vh] border-r shadow-lg cursor-pointer">
           {/* {Profile pics} */}

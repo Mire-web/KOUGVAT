@@ -20,7 +20,7 @@ import UserMenu from "./UserMenu";
 import { searchCompose } from "./searchComposer";
 import Link from "next/link";
 
-function Header({ placeholder }) {
+function Header({ placeholder, isLoggedIn  }) {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const date = new Date();
@@ -70,7 +70,7 @@ function Header({ placeholder }) {
   const handleHomeClick = () => {
     router.push("/");
     progressBarRun(1000);
-	console.log(Logged(true))
+	// console.log(Logged(true))
   };
 
   const [open, setOpen] =useState(false);
@@ -139,7 +139,7 @@ function Header({ placeholder }) {
             </div>
           </div>
         )}
-      {open && <Logged logged = {false}/>}
+      {open && <Logged logged = {isLoggedIn || false}/>}
       </header>
   );
 }

@@ -4,6 +4,22 @@ import Header from "@/components/Header";
 import LargeCard from "@/components/LargeCard";
 import MediumCard from "@/components/MediumCard";
 import SmallCard from "@/components/SmallCard";
+import { cookies } from "next/headers";
+import jwt from 'jsonwebtoken';
+
+async function getAndValidateCookiesFromApplication() {
+  const cookieStore = cookies();
+  const token = cookieStore.get("token")?.value;
+  // console.log("token", token)
+  if(!token) return false
+  try {
+    const decoded = jwt.verify(token, process.env.NEXTAUTH_SECRET_KEY);
+    return true
+  } catch (err) {
+    console.log('err', err)
+    return false
+  }
+}
 
 export default async function Home() {
   const res = await fetch("https://api.npoint.io/b66a915cb4531f79aada", {
@@ -14,10 +30,13 @@ export default async function Home() {
   });
   const data = await res.json();
   const result = await cardRes.json();
+  
+  const isAuth = await getAndValidateCookiesFromApplication();
+
   return (
     <>
       {/* {Header} */}
-      <Header />
+      <Header isLoggedIn={isAuth}/>
       {/* {Banner} */}
       <Banner />
       {/* {Main} */}
@@ -39,19 +58,19 @@ export default async function Home() {
         <section>
           <h2 className="text-4xl font-semibold py-8">Live VIP Style</h2>
           <div className="flex overflow-scroll scrollbar-hide p-3 -ml-3 space-x-3">
-			{result?.map((item) => (
-            <MediumCard key={item.id} img={item.img} title={item.title}/>
-			))}
+            {result?.map((item) => (
+              <MediumCard key={item.id} img={item.img} title={item.title} />
+            ))}
           </div>
         </section>
-		<LargeCard 
-		img="https://links.papareact.com/4cj"
-		title="Ifite-Awka"
-		description="Get the best accomodations around Unizik"
-		buttonText="Book a room"
-		/>
+        <LargeCard
+          img="https://links.papareact.com/4cj"
+          title="Ifite-Awka"
+          description="Get the best accomodations around Unizik"
+          buttonText="Book a room"
+        />
       </main>
-	  <Footer />
+      <Footer />
     </>
   );
 }

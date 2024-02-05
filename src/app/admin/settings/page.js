@@ -8,7 +8,7 @@ function Settings() {
       <div className="lg:col-start-2 p-7">
         <form action="">
           <label
-            for="npassword"
+            htmlFor="npassword"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             New Password
@@ -22,7 +22,7 @@ function Settings() {
             required
           />
           <label
-            for="cnpassword"
+            htmlFor="cnpassword"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-5"
           >
             Confirm New Password
@@ -44,7 +44,7 @@ function Settings() {
         </form>
         <form action="" className="mt-20">
           <label
-            for="phone"
+            htmlFor="phone"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Update Phone Number

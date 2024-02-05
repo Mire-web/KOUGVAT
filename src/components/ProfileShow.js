@@ -6,10 +6,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ClockIcon } from "@heroicons/react/outline";
 import { BookOpenIcon, BriefcaseIcon, HomeIcon } from "@heroicons/react/solid";
 
-function ProfileShow({username, description, img, course, occupation, joinDate}) {
+function ProfileShow({isAuth, username, description, img, course, occupation, joinDate}) {
   return (
-	<div>
-	   <Header />
+    <div>
+      <Header isLoggedIn={isAuth} />
       <div className="relative grid grid-cols-1 md:grid-cols-3">
         <div className="relative flex flex-col md:min-h-[100vh] border-r shadow-lg cursor-pointer pb-5">
           {/* {Profile pics} */}
@@ -26,14 +26,22 @@ function ProfileShow({username, description, img, course, occupation, joinDate})
             <div className="justify-between w-[100%] flex">
               <div>
                 <label className="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" value="" className="sr-only peer" readOnly checked/>
+                  <input
+                    type="checkbox"
+                    value=""
+                    className="sr-only peer"
+                    readOnly
+                    checked
+                  />
                   <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-sky-400 outline-none"></div>
                   <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-500">
                     I need a roommate
                   </span>
                 </label>
               </div>
-              <Link href={`https://wa.me/2349027997382?text=I%20am%20interested%20in%20being%20${username}'s%20roommate%20.`}>
+              <Link
+                href={`https://wa.me/2349027997382?text=I%20am%20interested%20in%20being%20${username}'s%20roommate%20.`}
+              >
                 <FaWhatsapp className="text-2xl text-green-500 font-bold" />
               </Link>
             </div>
@@ -45,7 +53,8 @@ function ProfileShow({username, description, img, course, occupation, joinDate})
             <h1 className="text-3xl md:text-5xl">{username}</h1>
           </div>
           {/* bio */}
-          <p className="text-md md:text-xl text-gray-500 mb-10">{description}
+          <p className="text-md md:text-xl text-gray-500 mb-10">
+            {description}
           </p>
           {/* location */}
           <h4 className="flex items-center text-sky-700">
@@ -63,8 +72,8 @@ function ProfileShow({username, description, img, course, occupation, joinDate})
           </h4>
         </div>
       </div>
-	</div>
-  )
+    </div>
+  );
 }
 
 export default ProfileShow
