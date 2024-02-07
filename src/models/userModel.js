@@ -22,6 +22,9 @@ const userSchema = mongoose.Schema({
 },
 {
 	timestamps: true
+},
+{
+	collection: "UserDetail"
 });
 
 userSchema.set("toJSON", {

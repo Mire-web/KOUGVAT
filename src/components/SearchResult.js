@@ -8,7 +8,7 @@ import format from "date-fns/format";
 import MapApp from "./Map";
 import { MapIcon } from "@heroicons/react/outline";
 
-export function SearchResult(searchResult, isAuth) {
+export function SearchResult({searchResult, isAuth}) {
   const searchParams = useSearchParams();
   const location = searchParams.get("location");
   const startDate = format(

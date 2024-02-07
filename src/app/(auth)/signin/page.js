@@ -24,30 +24,6 @@ function SignIn() {
     setError("");
   };
 
-  // const session = useSession()
-
-  // useEffect(() => {
-  //   console.log("Sesisio", session);
-  //   // const router = useRouter()
-  //   // router.replace("")
-  // }, [session]);
-
-  //   console.log("Userrr", User);
-
-  //   async function login() {
-  //     try {
-  //       connectDB();
-  //     //   console.log(User);
-  //       const user = await User.findOne({ email: userInfo.email });
-  //       if (!user) throw new Error("Wrong Credentials.");
-  //       const isCorrect = await bcrypt.compare(userInfo.password, user.password);
-  //       if (!isCorrect) throw new Error("Wrong Credentials");
-  //       return user;
-  //     } catch (error) {
-  //       setError(error);
-  //     }
-  //   }
-
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -64,15 +40,11 @@ function SignIn() {
           body: JSON.stringify(userInfo),
         });
 
-        // console.log("fsfsfsfs", res)
         if(!res.ok || res.status !== 200){
           setError("Invalid Credentials")
         }else{
           router.push("/", undefined, { shallow: true });
-          router.reload();
-          // router.push('/')
         }
-        // return 
       } catch (error) {
         console.log("errr");
         setError("An error occured. Recheck your credentials and ensure you have stable internet")

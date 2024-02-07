@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function UserMenu() {
+	const router = useRouter();
 
   const handleLogout = async(e) => {
     e.preventDefault();
@@ -9,7 +11,7 @@ function UserMenu() {
       const res = await fetch("api/logout", {
         method: "GET",
       });
-      window.location.reload();
+      router.push('/signin');
     } catch (error) {
       console.log(error)
     }
@@ -24,19 +26,19 @@ function UserMenu() {
         <Link href={"/users"} className="navLink">
           Profile
         </Link>
-        <Link href={"#"} className="navLink">
+        <Link href={"/explore/roommates"} className="navLink">
           Explore Roommates
         </Link>
-        <Link href={"#"} className="navLink">
+        <Link href={"/explore"} className="navLink">
           Explore Rooms
         </Link>
       </div>
       <div className="border-b"></div>
       <div className="cursor-pointer flex-col flex">
-        <Link href={"#"} className="navLink">
+        <Link href={"https://wa.me/2349027997382"} target="_blank" className="navLink">
           Contact Admin
         </Link>
-        <Link href={"#"} className="navLink">
+        <Link href={"https://wa.me/2347044090201"} className="navLink">
           Help Center
         </Link>
         <Link
